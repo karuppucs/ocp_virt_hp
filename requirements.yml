@@ -1,5 +1,6 @@
 collections:
 - name: kubernetes.core
+  version: 5.0.0
 - name: vmware.vmware_rest
 - name: community.general
 - name: kubevirt.core
