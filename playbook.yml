@@ -4,15 +4,14 @@
   collections:
     - rlopez.ocp_virt
   pre_tasks:
-    
-  - name: Install collections from requirements.yml (EE)
-    vars:
-    __collections_path: "{{ lookup('config', 'COLLECTIONS_PATHS')[0] }}"
-    command: >-
-      ansible-galaxy collection install
-      -r requirements.yml
-      -p "{{ __collections_path | quote }}"
-      --force-with-deps
+    - name: Install collections from requirements.yml (EE)
+      vars:
+        __collections_path: "{{ lookup('config', 'COLLECTIONS_PATHS')[0] }}"
+      command: >-
+        ansible-galaxy collection install
+        -r requirements.yml
+        -p "{{ __collections_path | quote }}"
+        --force-with-deps
 
   roles:
 #  - {role: rlopez.ocp_virt.validation}
