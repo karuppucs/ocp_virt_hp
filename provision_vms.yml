@@ -9,12 +9,12 @@
           apiVersion: kubevirt.io/v1
           kind: VirtualMachine
           metadata:
-            #name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-            name: "rhel-9-aap-01"
+            name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+            #name: "rhel-9-aap-01"
             namespace: vm
             labels:
-              #app: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-              app: "rhel-9-aap-01"
+              app: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+              #app: "rhel-9-aap-01"
               kubevirt.io/dynamic-credentials-support: 'true'
               vm.kubevirt.io/template: rhel9-server-small
               vm.kubevirt.io/template.namespace: vm
@@ -26,8 +26,8 @@
               - apiVersion: cdi.kubevirt.io/v1beta1
                 kind: DataVolume
                 metadata:
-                  #name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-                  name: "rhel-9-aap-01"
+                  name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+                  #name: "rhel-9-aap-01"
                 spec:
                   sourceRef:
                     kind: DataSource
@@ -40,8 +40,8 @@
             template:
               metadata:
                 labels:
-                  #kubevirt.io/domain: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-                  kubevirt.io/domain: "rhel-9-aap-01"
+                  kubevirt.io/domain: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+                  #kubevirt.io/domain: "rhel-9-aap-01"
                   kubevirt.io/size: small
               spec:
                 architecture: amd64
@@ -59,8 +59,8 @@
                           bus: virtio
                         name: cloudinitdisk
                     interfaces:
-                      #- macAddress: "02:f3:be:00:00:{{ '%02x' | format(item.id) }}"
-                      - macAddress: "02:f3:be:00:00:95" 
+                      - macAddress: "02:f3:be:00:00:{{ '%02x' | format(item.id) }}"
+                      #- macAddress: "02:f3:be:00:00:95" 
                         masquerade: {}
                         model: virtio
                         name: default
@@ -83,8 +83,8 @@
                 terminationGracePeriodSeconds: 180
                 volumes:
                   - dataVolume:
-                      #name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-                      name: "rhel-9-aap-01"
+                      name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+                      #name: "rhel-9-aap-01"
                     name: rootdisk
                   - cloudInitConfigDrive:
                       userData: |
@@ -103,10 +103,10 @@
                             wmarx: {{ vm_password }}
                           expire: False
                     name: cloudinitdisk
-      #loop:
-        #- { role: "web", env: "prod", id: 1 }
-        #- { role: "app", env: "prod", id: 2 }
-        #- { role: "db", env: "prod", id: 3 }
-        #- { role: "web", env: "dev", id: 4 }
-        #- { role: "app", env: "dev", id: 5 }
-        #- { role: "db", env: "dev", id: 6 }
+      loop:
+        - { role: "web", env: "prod", id: 1 }
+        - { role: "app", env: "prod", id: 2 }
+        - { role: "db", env: "prod", id: 3 }
+        - { role: "web", env: "dev", id: 4 }
+        - { role: "app", env: "dev", id: 5 }
+        - { role: "db", env: "dev", id: 6 }
