@@ -60,7 +60,7 @@
                         name: cloudinitdisk
                     interfaces:
                       #- macAddress: "02:f3:be:00:00:{{ '%02x' | format(item.id) }}"
-                       - macAddress: "02:f3:be:00:00:95" 
+                      - macAddress: "02:f3:be:00:00:95" 
                         masquerade: {}
                         model: virtio
                         name: default
