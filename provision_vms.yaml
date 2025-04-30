@@ -40,7 +40,8 @@
             template:
               metadata:
                 labels:
-                  kubevirt.io/domain: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+                  #kubevirt.io/domain: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+                  kubevirt.io/domain: "rhel-9-aap-{{ '%02d' }}"
                   kubevirt.io/size: small
               spec:
                 architecture: amd64
@@ -58,7 +59,8 @@
                           bus: virtio
                         name: cloudinitdisk
                     interfaces:
-                      - macAddress: "02:f3:be:00:00:{{ '%02x' | format(item.id) }}"
+                      #- macAddress: "02:f3:be:00:00:{{ '%02x' | format(item.id) }}"
+                       - macAddress: "02:f3:be:00:00:95" 
                         masquerade: {}
                         model: virtio
                         name: default
@@ -81,7 +83,8 @@
                 terminationGracePeriodSeconds: 180
                 volumes:
                   - dataVolume:
-                      name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+                      #name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
+                      name: "rhel-9-aap-{{ '%02d' }}"
                     name: rootdisk
                   - cloudInitConfigDrive:
                       userData: |
