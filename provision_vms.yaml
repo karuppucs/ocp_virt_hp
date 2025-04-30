@@ -10,11 +10,11 @@
           kind: VirtualMachine
           metadata:
             #name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-            name: "rhel-9-aap-{{ '%02d' }}"
+            name: "rhel-9-aap-01"
             namespace: vm
             labels:
               #app: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-              app: "rhel-9-aap-{{ '%02d' }}"
+              app: "rhel-9-aap-01"
               kubevirt.io/dynamic-credentials-support: 'true'
               vm.kubevirt.io/template: rhel9-server-small
               vm.kubevirt.io/template.namespace: vm
@@ -27,7 +27,7 @@
                 kind: DataVolume
                 metadata:
                   #name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-                  name: "rhel-9-aap-{{ '%02d' }}"
+                  name: "rhel-9-aap-01"
                 spec:
                   sourceRef:
                     kind: DataSource
@@ -41,7 +41,7 @@
               metadata:
                 labels:
                   #kubevirt.io/domain: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-                  kubevirt.io/domain: "rhel-9-aap-{{ '%02d' }}"
+                  kubevirt.io/domain: "rhel-9-aap-01"
                   kubevirt.io/size: small
               spec:
                 architecture: amd64
@@ -84,7 +84,7 @@
                 volumes:
                   - dataVolume:
                       #name: "{{ item.role }}-{{ item.env }}-{{ '%02d' | format(item.id) }}"
-                      name: "rhel-9-aap-{{ '%02d' }}"
+                      name: "rhel-9-aap-01"
                     name: rootdisk
                   - cloudInitConfigDrive:
                       userData: |
@@ -100,7 +100,7 @@
                             lock_passwd: false
                         chpasswd:
                           list: |
-                            cloud-user:{{ vm_password }}
+                            wmarx: {{ vm_password }}
                           expire: False
                     name: cloudinitdisk
       #loop:
