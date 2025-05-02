@@ -9,7 +9,7 @@
         namespace: vm
       spec:
         secret:
-          name: vsphere-credentials
+          name: vsphere-tfslb
           namespace: vm
         settings:
           vddkInitImage: 'image-registry.openshift-image-registry.svc:5000/openshift/vddk:latest'
