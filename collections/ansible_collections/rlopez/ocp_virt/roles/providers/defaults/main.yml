@@ -3,4 +3,4 @@
 
 provider_name: "vsphere"
 provider_namespace: "vm"
-vmware_credentials: "vsphere-tfslb"
+vmware_credentials: "vsphere-gfd95"

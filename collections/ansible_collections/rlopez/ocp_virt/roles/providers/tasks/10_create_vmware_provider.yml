@@ -9,10 +9,10 @@
         namespace: vm
       spec:
         secret:
-          name: vsphere-tfslb
+          name: vsphere-gfd95
           namespace: vm
         settings:
-          vddkInitImage: 'image-registry.openshift-image-registry.svc:5000/openshift/vddk:latest'
+          vddkInitImage: 'quay.io/wmarx/vddk:latest'
         type: vsphere
         url: 'https://vcsnsx-vc.infra.demo.redhatcom/sdk'
 
