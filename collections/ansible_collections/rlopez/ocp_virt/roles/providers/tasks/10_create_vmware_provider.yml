@@ -5,12 +5,12 @@
       apiVersion: forklift.konveyor.io/v1beta1
       kind: Provider
       metadata:
-        name: "{{ provider_name }}"
-        namespace: "{{ provider_namespace }}"
+        name: vsphere
+        namespace: vm
       spec:
         secret:
           name: vsphere-credentials
-          namespace: "{{ provider_namespace }}"
+          namespace: vm
         settings:
           vddkInitImage: 'image-registry.openshift-image-registry.svc:5000/openshift/vddk:latest'
         type: vsphere
