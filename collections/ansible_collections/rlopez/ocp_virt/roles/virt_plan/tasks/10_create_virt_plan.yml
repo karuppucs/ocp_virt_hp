@@ -63,10 +63,10 @@
         provider:
           destination:
             name: host
-            namespace: "{{  }}" # vm
+            namespace: vm
           source:
             name: vmware
-            namespace:  "{{  }}" #vm
+            namespace: vm
 
 - name: Build a list of all the datastores
   vmware.vmware_rest.vcenter_datastore_info:
@@ -120,7 +120,7 @@
 
 - name: Create or update a StorageMap
   kubernetes.core.k8s:
-    namespace: "{{  }}"
+    namespace: vm
     definition: "{{ lookup('template', 'datastore.yaml.j2' ) | from_yaml }}"
     state: present
 
@@ -132,24 +132,24 @@
       kind: Plan
       metadata:
         name: "{{ plan_name }}"
-        namespace: "{{  }}"
+        namespace: vm
       spec:
         archived: false
         description: ''
         map:
           network:
             name: "{{ networkmap_name }}"
-            namespace: "{{  }}"
+            namespace: vm
           storage:
             name: "{{ storagemap_name }}"
-            namespace: "{{  }}"
+            namespace: vm
         provider:
           destination:
             name: host
-            namespace: "{{  }}"
+            namespace: vm
           source:
             name: vmware
-            namespace: "{{  }}"
+            namespace: vm
         targetNamespace: "{{ migration_target_namespace }}"
         vms: "{{ vms_for_plan_spec }}"
         warm: false
@@ -158,12 +158,12 @@
   kubernetes.core.k8s:
     api_version: forklift.konveyor.io/v1beta1
     kind: Migration
-    namespace: "{{  }}"
+    namespace: vm
     name: "{{ plan_name }}"
     definition:
       metadata:
         name: "{{ plan_name }}"
-        namespace: "{{  }}"
+        namespace: vm
       spec:
         plan:
           name: "{{ plan_name }}"

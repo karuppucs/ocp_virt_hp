@@ -9,7 +9,7 @@
         namespace: vm
       spec:
         secret:
-          name: vsphere-gfd95
+          name: vsphere-creds
           namespace: vm
         settings:
           vddkInitImage: 'quay.io/wmarx/vddk:latest'
