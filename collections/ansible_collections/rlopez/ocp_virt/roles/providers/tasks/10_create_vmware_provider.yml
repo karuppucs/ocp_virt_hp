@@ -12,7 +12,8 @@
           name: vsphere-creds
           namespace: vm
         settings:
+          sdkEndpoint: vcenter
           vddkInitImage: 'quay.io/wmarx/vddk:latest'
         type: vsphere
-        url: 'https://vcsnsx-vc.infra.demo.redhatcom/sdk'
+        url: 'https://vcsnsx-vc.infra.demo.redhat.com/sdk' 
 
