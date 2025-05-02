@@ -93,7 +93,7 @@
 #               id: "{{ datastore_id }}"
 #         provider:
 #           destination:
-#             name: host
+#             name: ocpv-local
 #             namespace: "{{  }}"
 #           source:
 #             name: vmware
