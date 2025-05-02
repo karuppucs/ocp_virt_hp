@@ -9,7 +9,7 @@
         namespace: "{{ provider_namespace }}"
       spec:
         secret:
-          name: "{{ vmware_credentials }}"
+          name: "{{ vsphere-ll88d }}"
           namespace: "{{ provider_namespace }}"
         settings:
           vddkInitImage: 'image-registry.openshift-image-registry.svc:5000/openshift/vddk:latest'
