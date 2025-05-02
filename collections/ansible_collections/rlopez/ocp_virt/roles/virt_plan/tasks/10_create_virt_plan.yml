@@ -62,10 +62,10 @@
               id: "{{ portgroup_id }}"
         provider:
           destination:
-            name: host
+            name: ocpv-local
             namespace: vm
           source:
-            name: vmware
+            name: vsphere
             namespace: vm
 
 - name: Build a list of all the datastores
@@ -145,10 +145,10 @@
             namespace: vm
         provider:
           destination:
-            name: host
+            name: ocpv-local
             namespace: vm
           source:
-            name: vmware
+            name: vsphere
             namespace: vm
         targetNamespace: "{{ migration_target_namespace }}"
         vms: "{{ vms_for_plan_spec }}"
