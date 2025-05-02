@@ -9,10 +9,10 @@
         namespace: "{{ provider_namespace }}"
       spec:
         secret:
-          name: "{{ vsphere-ll88d }}"
+          name: vsphere-credentials
           namespace: "{{ provider_namespace }}"
         settings:
           vddkInitImage: 'image-registry.openshift-image-registry.svc:5000/openshift/vddk:latest'
         type: vsphere
-        url: 'https://{{ vmware_host }}/sdk'
+        url: 'https://vcsnsx-vc.infra.demo.redhatcom/sdk'
 
