@@ -1,6 +1,6 @@
 ---
 - name: Run rhc connect command
-  hosts: all
+  hosts: {{ hostname_repos }}
   gather_facts: false
   become: true
 
