@@ -1,6 +1,6 @@
 ---
 # defaults file for providers
 
-provider_name: "vmware"
+provider_name: "vmwarehp"
 provider_namespace: "openshift-mtv"
-vmware_credentials: "vmware-credentials"
+vmware_credentials: "vmwarehp-credentials"
