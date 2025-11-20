@@ -65,7 +65,7 @@
             name: host
             namespace: "{{ migration_namespace }}" # openshift-mtv
           source:
-            name: vmware
+            name: vmwarehp
             namespace:  "{{ migration_namespace }}" #openshift-mtv
 
 - name: Build a list of all the datastores
