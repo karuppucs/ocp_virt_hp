@@ -59,7 +59,7 @@
           - destination:
               type: pod
             source:
-              id: "{{ portgroup_id }}"
+              id: network-17
         provider:
           destination:
             name: host
