@@ -148,7 +148,7 @@
             name: host
             namespace: "{{ migration_namespace }}"
           source:
-            name: vmware
+            name: vmwarehp
             namespace: "{{ migration_namespace }}"
         targetNamespace: "{{ migration_target_namespace }}"
         vms: "{{ vms_for_plan_spec }}"
